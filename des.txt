@@ -1,0 +1,27 @@
+
+
+from Crypto.Cipher import DES
+from Crypto.Random import get_random_bytes
+
+# Create a 64-bit (8-byte) DES key
+des_key = get_random_bytes(8)
+
+# Initialize the DES cipher with the key and ECB mode
+cipher = DES.new(des_key, DES.MODE_ECB)
+
+# Message to be encrypted (must be a multiple of 8 bytes)
+message = b"HelloDES"
+
+# Pad the message to be a multiple of 8 bytes (for simplicity)
+while len(message) % 8 != 0:
+    message += b' '
+
+# Encrypt the message
+ciphertext = cipher.encrypt(message)
+
+# Decrypt the ciphertext
+decrypted_message = cipher.decrypt(ciphertext)
+
+print("Original message:", message)
+print("Encrypted message:", ciphertext.hex())
+print("Decrypted message:", decrypted_message.decode('utf-8').strip())

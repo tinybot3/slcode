@@ -1,0 +1,20 @@
+from pycipher import Playfair
+
+# Define your key
+key = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+# Create a Playfair cipher object with the key
+pf = Playfair(key)
+
+# Message to encrypt
+message = ' HELLO WORLD '
+
+# Encrypt the message
+encrypted_message=pf.encipher(message)
+
+# Decrypt the message
+decrypted_message = pf.decipher(encrypted_message)
+
+print("Original message:", message)
+print("Encrypted message:", encrypted_message)
+print("Decrypted message:", decrypted_message)

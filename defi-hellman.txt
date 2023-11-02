@@ -1,0 +1,20 @@
+#ask for prime number
+
+p, q = [int(x) for x in input("Enter Values: ").split()]
+ 
+
+#private keys for alice and bob
+Alice_key,Bob_key = [int(x) for x in input("Alice key and Bob Private key: ").split()]
+
+
+#Compute Public Values
+alice, bob  = (p**Alice_key % q), (p**Bob_key % q)
+
+
+
+#Alice and Bob , compute same keys
+Alice,Bob = (bob**Alice_key % q), (alice**Bob_key % q)
+
+
+print(Alice)
+print(Bob)

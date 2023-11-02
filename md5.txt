@@ -1,0 +1,26 @@
+import hashlib 
+string = "Chinmay"
+encoded=string.encode()
+result = hashlib.md5(encoded)
+print("String : ", end ="")
+print(string)
+print("Hash Value : ", end ="")
+print(result)
+print("Hexadecimal equivalent: ",result.hexdigest())
+
+
+
+--------------------------------------------------------------------
+//from file
+
+
+
+import hashlib
+ 
+with open("sample.txt","rb") as f:
+    bytes = f.read()
+    print("Bytes read from the file:",bytes)
+    result = hashlib.md5(bytes)
+    print("Hah Value: ",result)
+    print("The hexadecimal equivalent: ")
+    print(result.hexdigest())

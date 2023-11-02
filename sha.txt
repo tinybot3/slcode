@@ -1,0 +1,29 @@
+import hashlib
+str="PundalikBhivaDesai" 
+print("String is :",str)
+print()
+# SHA256
+result = hashlib.sha256(str.encode())
+print("Hexadecimal equivalent of SHA256 : ",result.hexdigest())
+print()
+# SHA384
+result = hashlib.sha384(str.encode())
+hexCode = result.hexdigest()
+print("Hexadecimal equivalent of SHA384 : ",result.hexdigest())
+print()
+# SHA224
+result=hashlib.sha224(str.encode())
+hexCode = result.hexdigest()
+print("Hexadecimal equivalent of SHA224",result.hexdigest())
+print()
+# SHA512
+result=hashlib.sha512(str.encode())
+hexCode = result.hexdigest() 
+print("Hexadecimal equivalent of SHA512 :",result.hexdigest())
+print()
+# SHA1
+result=hashlib.sha1(str.encode())
+hexCode = result.hexdigest()
+print("Hexadecimal equivalent of SHA1 :",result.hexdigest())
+print()
+
